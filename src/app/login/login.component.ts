@@ -2,42 +2,41 @@ import { Component } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Credential } from '../models/user/Credential';
 import { Router } from '@angular/router';
-import { Token } from '../models/user/Token';
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent {
 
-    constructor( private userService: UserService,
-	         private router: Router
-    )
-    { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
-    email : String = "adsoft@live.com.mx";
-    password : String = "123";
-    myLogin = new Token();
+  email: string = "";
+  password: string = "";
 
-    callLogin() {
+  callLogin() {
+    const myCredential = new Credential();
+    myCredential.email = this.email;
+    myCredential.password = this.password;
 
-      //alert("login...");
-
-     var myCredential = new Credential();
-
-     myCredential.email = this.email;
-     myCredential.password = this.password;
-
-     this.myLogin = this.userService.postLogin(
-        myCredential
-       );
-     if (this.myLogin.token != "")
-        this.router.navigate(['/home']);
-
-     console.log(this.myLogin);
-
-    }
+    this.userService.login(myCredential).subscribe({
+      next: (token: string) => {
+        if (token) {
+          localStorage.setItem('token', token);
+          console.log("Token guardado:", token);
+          this.router.navigate(['/tweets']);
+        } else {
+          alert("Login fallido: token vacío.");
+        }
+      },
+      error: (err) => {
+        console.error("Error de login:", err);
+        alert("Login fallido. Verifica tus credenciales.");
+      }
+    });
+  }
 }

@@ -19,15 +19,6 @@ export class ForgotPasswordComponent {
   resetPassword() {
     console.log(this.email);
 
-    var myValidUser = this.userService.sendUrlResetPassword(
-        this.email
-       );
-
-    if (myValidUser.id != 0)
-        this.router.navigate(['/']);
-
-     console.log(myValidUser);
-
 
   }
 }

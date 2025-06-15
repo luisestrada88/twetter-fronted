@@ -1,0 +1,10 @@
+<div class="comments">
+  <h4>Comentarios</h4>
+
+  <div *ngFor="let comment of comments">
+    <p>• {{ comment.content }}</p>
+  </div>
+
+  <textarea [(ngModel)]="newComment" placeholder="Escribe un comentario..."></textarea>
+  <button (click)="submitComment()">Enviar</button>
+</div>

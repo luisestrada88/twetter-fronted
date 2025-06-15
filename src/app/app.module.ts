@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,7 @@ import { TweetsComponent } from './tweets/tweets.component';
 import { HomeComponent } from './home/home.component';
 
 import {FormsModule } from "@angular/forms";
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import {FormsModule } from "@angular/forms";
     ResetPasswordComponent,
     LandingPageComponent,
     TweetsComponent,
-    HomeComponent
+    HomeComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

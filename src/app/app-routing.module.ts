@@ -1,3 +1,4 @@
+import { TweetsComponent } from "./tweets/tweets.component"; 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
  { path: 'login', component: LoginComponent },
  { path: 'forgot-password', component: ForgotPasswordComponent },
  { path: 'newuser', component: NewUserComponent },
- { path: 'reset-password/:email/:token', component: ResetPasswordComponent },
+ { path: 'reset-password/:email/:token', component: ResetPasswordComponent},
+ { path: 'tweets', component: TweetsComponent },
+ 
 ];
 
 @NgModule({

@@ -10,27 +10,27 @@ import { Router } from '@angular/router';
 })
 export class NewUserComponent {
 
- constructor( private userService: UserService,
-	      private router: Router
-    )
- {
- }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
- myPayloadUser = new User();
- myNewUser = new User();
+  user: User = new User();
 
  createUser() {
-   console.log(this.myPayloadUser);
-
- this.myNewUser = this.userService.createUser(
-        this.myPayloadUser
-       );
-
- console.log(this.myNewUser);
-
- if (this.myNewUser.id != 0)
-        this.router.navigate(['/login']);
-
- }
+  this.user.username = `${this.user.firstName}${this.user.lastName}`.toLowerCase();
+  this.user.id = undefined; // <- clave para evitar el error
+  console.log("Registrando usuario:", this.user);
+  this.userService.register(this.user).subscribe({
+    next: (res) => {
+      console.log("Usuario registrado:", res);
+      this.router.navigate(['/login']);
+    },
+    error: (err) => {
+      console.error("Error al registrar:", err);
+      alert("Error al registrar usuario.");
+    }
+  });
+}
 
 }
