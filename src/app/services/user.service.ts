@@ -14,10 +14,11 @@ const API_BASE = `${environment.apiUrl}/auth`;
 export class UserService {
 
   constructor(private http: HttpClient) {}
+private apiUrl = environment.apiUrl;
 
-  login(myCredential: Credential): Observable<string> {
-    return this.http.post(`${API_BASE}/login`, myCredential, { responseType: 'text' });
-  }
+login(cred: Credential): Observable<any> {
+  return this.http.post(`${this.apiUrl}/auth/login`, cred);
+}
 
   register(myUser: User): Observable<any> {
     return this.http.post(`${API_BASE}/register`, myUser);

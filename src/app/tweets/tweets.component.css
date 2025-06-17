@@ -1,0 +1,150 @@
+.tweet-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  color: #fff;
+  width: 100%;
+  max-width: 700px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.tweet-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.posted-by {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.comment-section {
+  border-top: 1px solid #333;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+.comment-container {
+  background-color: #2d2d2d;  /* Fondo oscuro para el comentario */
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.comment-author {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.comment-bubble {
+  background-color: #444;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.new-comment {
+  margin-top: 1rem;
+}
+
+.comment-input {
+  width: 100%;
+  background: #121212;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0d8de0;
+}
+
+.reactions-bar {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reaction-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+
+.reaction-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s;
+}
+
+.reaction-icon:hover {
+  transform: scale(1.2);
+}
+
+::ng-deep .reactions-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+::ng-deep .reaction-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  width: 60px !important;
+}
+
+::ng-deep .reaction-icon {
+  width: 32px;
+  height: 32px;
+  max-width: none;
+  transition: transform 0.2s;
+}
+
+.clicked .reaction-icon {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.4); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}

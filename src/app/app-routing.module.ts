@@ -7,9 +7,11 @@ import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 import { NewUserComponent } from "./new-user/new-user.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
+import { NewPostComponent } from './new-post/new-post.component';
 
 const routes: Routes = [
  { path: '', component: LandingPageComponent},
+ { path: 'new-post', component: NewPostComponent },
  { path: 'home', component: HomeComponent },
  { path: 'login', component: LoginComponent },
  { path: 'forgot-password', component: ForgotPasswordComponent },

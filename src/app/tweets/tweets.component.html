@@ -1,8 +1,28 @@
-<div class="tweet" *ngFor="let post of posts">
+<div class="tweet-card">
   <h3>{{ post.title }}</h3>
   <p>{{ post.description }}</p>
-  <img [src]="post.imageUrl" alt="Post image" width="300" *ngIf="post.imageUrl">
 
-  <!-- Sección de comentarios -->
-  <app-comments [postId]="post.id" [userId]="loggedUserId"></app-comments>
+  <div class="image-container">
+    <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Imagen del post" class="tweet-image" />
+  </div>
+
+ <p class="posted-by">Publicado por: {{ post.user?.username }}</p>
+
+  <div class="comment-section">
+    <h4>Comentarios</h4>
+    <div *ngFor="let comment of post.comments" class="comment-bubble">
+      {{ comment.content }}
+    </div>
+    <textarea [(ngModel)]="newComment" class="comment-input" placeholder="Escribe un comentario..."></textarea>
+    <button (click)="enviarComentario()">Enviar</button>
+  </div>
+
+  <div class="reactions-bar">
+    <div class="reaction-item" *ngFor="let tipo of ['LIKE', 'LOVE', 'XDDD', 'WAOS', 'TITE', 'EWWW']"
+         [class.clicked]="clickedReaction === tipo">
+      <img [src]="'assets/reactions/' + tipo + '.png'" [alt]="tipo"
+           class="reaction-icon" (click)="reaccionar(post.id, tipo)" />
+      <span>{{ reactionCounts[tipo] || 0 }}</span>
+    </div>
+  </div>
 </div>

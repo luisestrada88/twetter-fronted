@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'register', component: NewUserComponent },
   { path: 'home', component: HomeComponent },
   { path: 'tweets', component: TweetsComponent },
+  { path: 'new-post', component: NewPostComponent },
   { path: 'comments', component: CommentsComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent }

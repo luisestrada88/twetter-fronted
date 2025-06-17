@@ -19,11 +19,11 @@ export class CommentService {
     return this.http.get(`${API_URL}/post/${postId}`);
   }
 
-  postComment(content: string, userId: number, postId: number): Observable<any> {
-    return this.http.post(API_URL, { content, userId, postId }, {
-      headers: this.getAuthHeaders()
-    });
-  }
+postComment(content: string, userId: number, postId: number): Observable<any> {
+  return this.http.post(`${API_URL}`, { content, userId, postId }, {
+    headers: this.getAuthHeaders()
+  });
+}
 
   editComment(id: number, content: string, userId: number, postId: number): Observable<any> {
     return this.http.put(`${API_URL}/${id}`, { content, userId, postId }, {

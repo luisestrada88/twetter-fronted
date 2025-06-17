@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 
 import {FormsModule } from "@angular/forms";
 import { CommentsComponent } from './comments/comments.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CommentsComponent } from './comments/comments.component';
     LandingPageComponent,
     TweetsComponent,
     HomeComponent,
-    CommentsComponent
+    CommentsComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,

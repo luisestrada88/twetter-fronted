@@ -17,20 +17,30 @@ export class NewUserComponent {
 
   user: User = new User();
 
- createUser() {
-  this.user.username = `${this.user.firstName}${this.user.lastName}`.toLowerCase();
-  this.user.id = undefined; // <- clave para evitar el error
+createUser() {
+  // Normalizar y limpiar datos antes de enviar
+  this.user.id = undefined; // evitar conflictos con la base de datos
+  this.user.username = `${(this.user.firstName || '').trim()}${(this.user.lastName || '').trim()}`.toLowerCase();
+
+  // Por si el modelo User llega a tener roles definidos manualmente, forzamos inicialización vacía
+  if (!this.user['roles']) {
+    this.user['roles'] = [];
+  }
+
   console.log("Registrando usuario:", this.user);
-  this.userService.register(this.user).subscribe({
-    next: (res) => {
-      console.log("Usuario registrado:", res);
+
+this.userService.register(this.user).subscribe({
+   next: () => {
+      alert("Usuario registrado exitosamente");
       this.router.navigate(['/login']);
     },
-    error: (err) => {
-      console.error("Error al registrar:", err);
-      alert("Error al registrar usuario.");
-    }
-  });
+  error: (err) => {
+    const mensaje = typeof err.error === 'string' ? err.error : 'Error al registrar usuario.';
+    alert(mensaje);
+    console.error("Error al registrar:", err);
+  }
+});
+
 }
 
 }
