@@ -1,48 +1,39 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NewUserComponent } from './new-user/new-user.component';
-import { TweetsComponent } from './tweets/tweets.component';
-import { CommentsComponent } from './comments/comments.component';
-import { HomeComponent } from './home/home.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AppRoutingModule } from '../app/app-routing.module';
+import { AppComponent } from '../app/app.component';
+import { LoginComponent } from '../app/login/login.component';
+import { NewUserComponent } from '../app/new-user/new-user.component';
+import { ForgotPasswordComponent } from '../app/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from '../app/reset-password/reset-password.component';
+import { LandingPageComponent } from '../app/landing-page/landing-page.component';
+import { TweetsComponent } from '../app/tweets/tweets.component';
+import { HomeComponent } from '../app/home/home.component';
 
-const routes: Routes = [
-  { path: '', component: LandingPageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: NewUserComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'tweets', component: TweetsComponent },
-  { path: 'new-post', component: NewPostComponent },
-  { path: 'comments', component: CommentsComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'reset-password', component: ResetPasswordComponent }
-];
+import {FormsModule } from "@angular/forms";
+import { CommentsComponent } from '../app/comments/comments.component';
+import { NewPostComponent } from '../app/new-post/new-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NewUserComponent,
-    TweetsComponent,
-    CommentsComponent,
-    HomeComponent,
-    LandingPageComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LandingPageComponent,
+    TweetsComponent,
+    HomeComponent,
+    CommentsComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

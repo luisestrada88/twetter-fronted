@@ -1,0 +1,92 @@
+/* Header */
+.landing-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #00bcd4, #009688);
+  padding: 1rem 2rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.landing-header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.landing-header .login-button {
+  background-color: #ff5722;
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+  margin-left: 20px; /* Ajuste la posición del botón */
+  text-align: center;
+}
+
+.landing-header .login-button:hover {
+  background-color: #e64a19;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.9);
+}
+
+/* Landing Content */
+.landing-container {
+  background: url('https://services.meteored.com/img/article/menos-calor-y-mas-lluvias-esta-primavera-2025-en-mexico-el-fenomeno-de-la-nina-regulara-el-clima-trayendo-beneficios-1738873845851_512.jpeg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.landing-content {
+  max-width: 80%;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.weather-image {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

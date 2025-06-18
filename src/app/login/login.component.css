@@ -1,63 +1,88 @@
+/* Estilo para el contenedor de inicio de sesión */
 .login-container {
-  background-color: #1e1e1e;
-  padding: 2rem;
+  background-color: #2a2a2a;  /* Fondo más oscuro */
+  padding: 2.5rem;
   max-width: 400px;
-  margin: 4rem auto;
+  margin: 6rem auto;  /* Aumenté el margen superior para centrar mejor */
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.2);  /* Sombra más difusa */
   color: white;
 }
 
+/* Título del formulario */
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #00ffff;  /* Cambié el color para hacerlo más destacado */
 }
 
+/* Estilo para el formulario */
 form {
   display: flex;
   flex-direction: column;
+  gap: 1.2rem;  /* Separación entre los elementos */
 }
 
+/* Estilo para las etiquetas de los campos */
 label {
-  margin-top: 1rem;
   font-weight: bold;
+  color: #e0e0e0;  /* Color más suave para las etiquetas */
+  font-size: 1rem;
 }
 
+/* Estilo para los campos de entrada */
 input {
-  padding: 0.5rem;
+  padding: 0.8rem;
   margin-top: 0.25rem;
-  border: none;
+  border: 1px solid #444;  /* Añadí borde más sutil */
   border-radius: 6px;
-  background-color: #2a2a2a;
+  background-color: #333;
   color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
+input:focus {
+  border-color: #00ffff;  /* Cambio de borde cuando el input está en foco */
+  outline: none;
+}
+
+/* Estilo para el botón de enviar */
 button {
   margin-top: 1.5rem;
   padding: 0.7rem;
-  background-color: cyan;
+  background-color: #00bcd4;  /* Color cyan más suave */
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #00d4d4;
+  background-color: #00d4d4;  /* Colore más claro en el hover */
+  transform: translateY(-2px);  /* Le da un pequeño levantamiento al botón */
 }
 
+button:active {
+  transform: translateY(0);  /* Vuelve al estado normal cuando se hace clic */
+}
+
+/* Estilo para los enlaces de la parte inferior */
 .links {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
 }
 
 .links a {
-  color: cyan;
+  color: #00bcd4;  /* Color cyan para los enlaces */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .links a:hover {
+  color: #00d4d4;  /* Color más brillante en el hover */
   text-decoration: underline;
 }

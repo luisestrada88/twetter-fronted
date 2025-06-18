@@ -17,12 +17,15 @@
     <button (click)="enviarComentario()">Enviar</button>
   </div>
 
-  <div class="reactions-bar">
-    <div class="reaction-item" *ngFor="let tipo of ['LIKE', 'LOVE', 'XDDD', 'WAOS', 'TITE', 'EWWW']"
-         [class.clicked]="clickedReaction === tipo">
-      <img [src]="'assets/reactions/' + tipo + '.png'" [alt]="tipo"
-           class="reaction-icon" (click)="reaccionar(post.id, tipo)" />
-      <span>{{ reactionCounts[tipo] || 0 }}</span>
-    </div>
+ <div class="reactions-bar">
+  <div class="reaction-item"
+         *ngFor="let tipo of ['LIKE', 'LOVE', 'NOJAO', 'WAO', 'TITE', 'XDDD']"
+       [class.clicked]="userReaction === tipo">
+    <img [src]="'assets/reactions/' + tipo + '.png'" [alt]="tipo"
+         class="reaction-icon" (click)="reaccionar(post.id, tipo)" />
+    <span>{{ reactionCounts[tipo] || 0 }}</span>
   </div>
+</div>
+
+ 
 </div>

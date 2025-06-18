@@ -4,22 +4,22 @@
   <form (ngSubmit)="createUser()" class="form">
 
     <div class="form-group">
-      <label>Email</label>
+      <label for="email">Email</label>
       <input type="email" [(ngModel)]="user.email" name="email" required />
     </div>
 
     <div class="form-group">
-      <label>Nombre</label>
+      <label for="firstName">Nombre</label>
       <input type="text" [(ngModel)]="user.firstName" name="firstName" required />
     </div>
 
     <div class="form-group">
-      <label>Apellido</label>
+      <label for="lastName">Apellido</label>
       <input type="text" [(ngModel)]="user.lastName" name="lastName" required />
     </div>
 
     <div class="form-group">
-      <label>Contraseña</label>
+      <label for="password">Contraseña</label>
       <input type="password" [(ngModel)]="user.password" name="password" required />
     </div>
 

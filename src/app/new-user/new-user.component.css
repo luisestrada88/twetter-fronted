@@ -1,16 +1,25 @@
 .register-container {
   max-width: 400px;
-  margin: 2rem auto;
-  background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 10px;
+  margin: 4rem auto;  /* Ajusté el margen superior para centrarlo mejor */
+  background-color: #333;  /* Un tono más oscuro para el contenedor */
+  padding: 2.5rem;
+  border-radius: 12px;
   color: white;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);  /* Agregué sombra más difusa */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00bcd4;  /* Título con un color cyan brillante */
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;  /* Mayor separación entre los campos */
 }
 
 .form-group {
@@ -19,29 +28,36 @@
 }
 
 input {
-  padding: 0.5rem;
-  border: 1px solid #555;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border: 1px solid #444;  /* Borde más sutil */
+  border-radius: 6px;
   background-color: #2c2c2c;
   color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  border-color: cyan;
+  border-color: #00bcd4;  /* Color cyan cuando el campo está enfocado */
 }
 
 .btn {
-  background-color: cyan;
+  background-color: #00bcd4;  /* Cyan para el botón */
   color: black;
   border: none;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #00e6e6;
+  background-color: #009688;  /* Cambié el color de hover a un verde azulado */
+}
+
+.btn:disabled {
+  background-color: #555;  /* Color de fondo cuando está deshabilitado */
+  cursor: not-allowed;
 }

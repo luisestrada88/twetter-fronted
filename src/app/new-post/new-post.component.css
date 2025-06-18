@@ -1,35 +1,72 @@
 .new-post-container {
   max-width: 600px;
   margin: 4rem auto;
-  background-color: #1e1e1e;
-  padding: 2rem;
+  background-color: #2a2a2a;  /* Cambié el fondo a un tono más oscuro */
+  padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.new-post-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00bcd4;  /* Un color cyan para el título */
 }
 
 .post-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;  /* Aumenté el espacio entre los elementos */
 }
 
 .input-post {
-  background-color: #2d2d2d;
+  background-color: #3a3a3a;  /* Fondo más oscuro para los campos */
   border: 1px solid #444;
   border-radius: 8px;
   padding: 0.8rem;
   font-size: 1rem;
   color: white;
+  transition: border-color 0.3s ease;
+}
+
+.input-post:focus {
+  border-color: #00bcd4;  /* Color cyan al enfocar el campo */
+  outline: none;
 }
 
 .preview-container {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
 .preview-img {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 350px;  /* Aumenté la altura máxima para una vista previa más grande */
   border-radius: 8px;
+  object-fit: cover;  /* Hace que la imagen no se deforme */
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+button {
+  padding: 1rem;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #009688;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
 }
